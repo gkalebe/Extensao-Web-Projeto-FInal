@@ -1,17 +1,5 @@
 {
-  "name": "vidau-client",
-  "version": "1.0.0",
-  "private": true,
   "dependencies": {
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
-    "react-router-dom": "^6.21.2",
-    "react-scripts": "5.0.1"
-  },
-  "scripts": {
-    "start": "react-scripts start",       // inicia servidor dev porta 3000
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "react-scripts": "^5.0.1"
   }
 }
