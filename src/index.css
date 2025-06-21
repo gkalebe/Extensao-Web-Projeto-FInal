@@ -1,0 +1,134 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background: linear-gradient(135deg, #fffbe6, #eaf3c9);
+  font-family: 'Segoe UI', 'Helvetica Neue', Arial, sans-serif;
+  color: #347928;
+  line-height: 1.65;
+  min-height: 100vh;
+  -webkit-font-smoothing: antialiased;
+  user-select: text;
+  overflow-x: hidden;
+}
+
+a {
+  color: #347928;
+  text-decoration: none;
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: pointer;
+}
+
+a:hover,
+a:focus-visible {
+  color: #2a5e1d;
+  text-shadow: 0 0 5px rgba(42, 94, 29, 0.4);
+  outline: none;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+  background-color: #8ccf6f;
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem 1.2rem;
+  color: #fff;
+  font-weight: 600;
+  font-size: 1rem;
+  box-shadow: 0 4px 10px rgba(140, 207, 111, 0.4);
+  transition: background-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease;
+  user-select: none;
+}
+
+button:hover,
+button:focus-visible {
+  background-color: #7bb25e;
+  box-shadow: 0 6px 14px rgba(123, 178, 94, 0.6);
+  transform: translateY(-2px);
+  outline: none;
+}
+
+button:active {
+  background-color: #689e4a;
+  box-shadow: 0 3px 6px rgba(104, 158, 74, 0.5);
+  transform: translateY(0);
+}
+
+.container {
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+input, textarea, select {
+  font-family: inherit;
+  font-size: 1rem;
+  padding: 0.6rem 1rem;
+  border: 1px solid #dfe8c7;
+  border-radius: 8px;
+  background-color: #fafde8;
+  color: #347928;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline-offset: 2px;
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: #8ccf6f;
+  box-shadow: 0 0 6px rgba(140, 207, 111, 0.4);
+  outline: none;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f9d9;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #8ccf6f;
+  border-radius: 10px;
+  border: 2px solid #f1f9d9;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #7bb25e;
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 14px;
+  }
+
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  button {
+    font-size: 0.95rem;
+    padding: 0.5rem 1rem;
+  }
+}
