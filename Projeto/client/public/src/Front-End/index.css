@@ -19,8 +19,6 @@ body {
   line-height: 1.5;
   min-height: 100vh;
   padding-top: 70px; 
-  display: flex;
-  flex-direction: row;
 }
 
 .menu {
