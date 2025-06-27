@@ -30,42 +30,86 @@ Atender a uma **demanda da sociedade** relacionada ao bem-estar e à saúde ment
 ## 🧱 Estrutura do Projeto
 
 ```
-/meu-projeto-api
-|
-|-- /src
-|   |-- /config          # Arquivos de configuração (banco de dados, ambiente)
+/meu-projeto-completo/
+|-- /client/
+|   |-- /config/          # Configurações (banco de dados, variáveis de ambiente)
 |   |   |-- database.js
-|   |   `-- index.js
+|   |   `-- env.js
 |   |
-|   |-- /controllers     # Lógica de negócio, o que fazer com as requisições
-|   |   |-- userController.js
-|   |   `-- productController.js
+|   |-- /api/
+|   |   `-- /v1/            # Boas práticas incluem versionar sua API
+|   |       |-- /controllers/ # Lógica que recebe a requisição e envia a resposta
+|   |       |   |-- user.controller.js
+|   |       |   `-- product.controller.js
+|   |       |
+|   |       |-- /models/      # Schema e modelo do banco de dados (ex: Mongoose, Sequelize)
+|   |       |   |-- User.model.js
+|   |       |   `-- Product.model.js
+|   |       |
+|   |       |-- /routes/      # Definição dos endpoints da API
+|   |       |   |-- user.routes.js
+|   |       |   |-- product.routes.js
+|   |       |   `-- index.js      # Arquivo que une todas as rotas
+|   |       |
+|   |       `-- /middlewares/ # Funções executadas entre a requisição e o controller
+|   |           `-- auth.middleware.js
 |   |
-|   |-- /models          # Definição dos schemas do banco de dados
-|   |   |-- User.js
-|   |   `-- Product.js
+|   |-- /services/        # Lógica de negócio complexa, comunicação com outras APIs
+|   |   `-- email.service.js
 |   |
-|   |-- /routes          # Definição das rotas da API (endpoints)
-|   |   |-- users.js
-|   |   |-- products.js
-|   |   `-- index.js
+|   |-- /utils/           # Funções utilitárias (ex: formatar data, gerar hash)
+|   |   `-- errorHandler.js
 |   |
-|   |-- /services        # Lógica de serviço (ex: interagir com APIs externas)
-|   |
-|   |-- /middlewares     # Funções que rodam antes dos controllers (ex: autenticação)
-|   |   `-- auth.js
-|   |
-|   `-- app.js           # Arquivo principal da aplicação Express
+|   `-- server.js         # Arquivo principal que inicia o servidor Express
 |
-|-- /tests               # Testes automatizados
-|   |-- /integration
-|   `-- /unit
+|-- /public/              # Arquivos estáticos (favicon, index.html, robots.txt)
+|   |-- favicon.ico
+|   `-- index.html
 |
-|-- .env                 # Variáveis de ambiente (NÃO enviar para o Git)
-|-- .eslintrc.json       # Configurações do linter (ESLint)
-|-- .gitignore           # Arquivos a serem ignorados pelo Git
-|-- package.json         # Dependências e scripts do projeto
-`-- README.md            # Documentação do projeto
+|-- /src/
+|   |-- /assets/          # Imagens, fontes, ícones SVG, etc.
+|   |   `-- /images/
+|   |
+|   |-- /components/      # Componentes React reutilizáveis
+|   |   |-- /common/      # Componentes genéricos (Button, Input, Modal)
+|   |   |   |-- Button.jsx
+|   |   |   `-- Input.jsx
+|   |   |
+|   |   `-- /layout/      # Componentes de estrutura (Header, Footer, Sidebar)
+|   |       |-- Header.jsx
+|   |       `-- Footer.jsx
+|   |
+|   |-- /context/         # State Management com React Context API
+|   |   `-- AuthContext.jsx
+|   |
+|   |-- /hooks/           # Custom Hooks (ex: useAuth, useApi)
+|   |   `-- useAuth.js
+|   |
+|   |-- /pages/           # Componentes que representam uma página inteira
+|   |   |-- HomePage.jsx
+|   |   |-- LoginPage.jsx
+|   |   `-- ProfilePage.jsx
+|   |
+|   |-- /routes/          # Configuração das rotas da aplicação (React Router)
+|   |   `-- index.jsx
+|   |
+|   |-- /services/        # Funções para fazer chamadas à API do backend
+|   |   |-- api.js        # Configuração base do Axios ou Fetch
+|   |   `-- auth.service.js
+|   |
+|   |-- /styles/          # Arquivos de estilização globais
+|   |   `-- global.css
+|   |
+|   |-- /utils/           # Funções utilitárias do frontend
+|   |   `-- formatters.js
+|   |
+|   |-- App.jsx           # Componente raiz da aplicação
+|   `-- main.jsx          # Ponto de entrada da aplicação React
+|
+|-- .eslintrc.cjs         # Configuração do linter para qualidade de código
+|-- package.json          # Dependências e scripts do frontend
+`-- vite.config.js        # Configuração do bundler (Vite)
+
 
 
 ---
