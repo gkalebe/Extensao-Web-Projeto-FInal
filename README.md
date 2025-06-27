@@ -30,29 +30,43 @@ Atender a uma **demanda da sociedade** relacionada ao bem-estar e à saúde ment
 ## 🧱 Estrutura do Projeto
 
 ```
-vida-u/
-├── client/             # Frontend (React)
-│   ├── src/
-│   │   ├── App.js
-│   │   ├── index.js
-│   │   └── pages/
-│   │       ├── Home.js
-│   │       ├── Login.js
-│   │       ├── Register.js
-│   │       └── Dashboard.js
-│   └── package.json
-│
-├── server/             # Backend (Node.js + Express)
-│   ├── controllers/
-│   ├── models/
-│   ├── routes/
-│   ├── config/db.js
-│   ├── .env
-│   ├── server.js
-│   └── package.json
-│
-└── README.md
-```
+/meu-projeto-api
+|
+|-- /src
+|   |-- /config          # Arquivos de configuração (banco de dados, ambiente)
+|   |   |-- database.js
+|   |   `-- index.js
+|   |
+|   |-- /controllers     # Lógica de negócio, o que fazer com as requisições
+|   |   |-- userController.js
+|   |   `-- productController.js
+|   |
+|   |-- /models          # Definição dos schemas do banco de dados
+|   |   |-- User.js
+|   |   `-- Product.js
+|   |
+|   |-- /routes          # Definição das rotas da API (endpoints)
+|   |   |-- users.js
+|   |   |-- products.js
+|   |   `-- index.js
+|   |
+|   |-- /services        # Lógica de serviço (ex: interagir com APIs externas)
+|   |
+|   |-- /middlewares     # Funções que rodam antes dos controllers (ex: autenticação)
+|   |   `-- auth.js
+|   |
+|   `-- app.js           # Arquivo principal da aplicação Express
+|
+|-- /tests               # Testes automatizados
+|   |-- /integration
+|   `-- /unit
+|
+|-- .env                 # Variáveis de ambiente (NÃO enviar para o Git)
+|-- .eslintrc.json       # Configurações do linter (ESLint)
+|-- .gitignore           # Arquivos a serem ignorados pelo Git
+|-- package.json         # Dependências e scripts do projeto
+`-- README.md            # Documentação do projeto
+
 
 ---
 
